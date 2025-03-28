@@ -41,7 +41,10 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('#start/routes'), () => import('#start/kernel')],
+  preloads: [() => import('#start/routes/pessoa_routes'),
+    () => import('#start/routes/cliente_routes'),
+    () => import('#start/routes/contrato_routes'), 
+    () => import('#start/kernel')],
 
   /*
   |--------------------------------------------------------------------------
