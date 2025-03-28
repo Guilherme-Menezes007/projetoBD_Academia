@@ -9,8 +9,12 @@
 
 import router from '@adonisjs/core/services/router'
 
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+const PessoasController = () => import('#controllers/pessoas_controller')
+
+router.get('/', [PessoasController, 'index'])
+
+router.post('/', [PessoasController, 'store'])
+
+router.put('/:cpf', [PessoasController, 'update'])
+
+router.delete('/:cpf', [PessoasController, 'delete'])
